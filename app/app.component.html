@@ -1,0 +1,40 @@
+<h1>Draggable!</h1>
+
+<div class="box box-1" [appDraggable]="true">
+  Box 1 (draggable)
+
+  <div *appDraggableHelper class="box">Box 1 (draggable)</div>
+</div>
+
+<div class="box box-2" [appMovable]="true">
+  Box 2 (movable)
+</div>
+
+<div class="box box-3" [appDraggable]="true">
+  Box 3 (draggable)
+
+  <div *appDraggableHelper class="box">Box 3 (draggable)</div>
+</div>
+
+<div class="box box-4" [appMovable]="true">
+  Box 4 (movable)
+</div>
+
+<div class="box">
+  Box 3 (static)
+</div>
+
+<div class="area" appMovableArea>
+  <h2>Draggable area</h2>
+
+  <div class="box" [appMovable]="true">Trapped box 1</div>
+  <div class="box" [appMovable]="true">Trapped box 2</div>
+</div>
+
+<h2>Sortable list</h2>
+<ul appSortableList (sort)="sorted($event)">
+  <li *ngFor="let item of sortableList" [appSortable]="true" class="box">
+    {{ item }}
+    <div *appDraggableHelper class="box">{{ item }}</div>
+  </li>
+</ul>

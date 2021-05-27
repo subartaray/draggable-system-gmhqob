@@ -1,0 +1,22 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/cdk/overlay";
+
+@include cdk-overlay();
+
+.draggable {
+  cursor: move;
+}
+
+.dragging {
+  user-select: none;
+  z-index: 99;
+  position: relative;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.cdk-overlay-pane.animated {
+  transition: margin 200ms ease-in-out;
+}
